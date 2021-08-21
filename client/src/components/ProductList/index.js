@@ -8,6 +8,7 @@ import ProductItem from '../ProductItem';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import spinner from '../../assets/spinner.gif';
+import { useDispatch, useSelector } from 'react-redux';
 
 function ProductList() {
   const state = useSelector((state) => {
