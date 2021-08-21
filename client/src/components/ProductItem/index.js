@@ -6,12 +6,19 @@ import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const ProductItem = ({ item }) => {
+const ProductItem = (item) => {
 
   const state = useSelector((state) => {
     return state
   });
   const dispatch = useDispatch(state);
+  const {
+    image,
+    name,
+    _id,
+    price,
+    quantity
+  } = item;
 
   const { cart } = state;
 
@@ -36,17 +43,6 @@ const ProductItem = ({ item }) => {
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
   }
-
-
-
-  const {
-    image,
-    name,
-    _id,
-    price,
-    quantity
-  } = item;
-
 
 
 
